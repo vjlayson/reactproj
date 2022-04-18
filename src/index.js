@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import React and ReactDOM  libraries
+import React from "react"; // manage components
+import ReactDOM from "react-dom"; // renderer, para ma-display
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./css/index.css"
+import Main from "./components/Main";
+import Gallery from "./components/Gallery";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// import {createRoot} from "react-dom/client"; //React18
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const container = document.getElementById("root")
+// const root = createRoot(container)
+
+// create react component
+// ALways capital first
+const App = () => {
+    return (
+        <div>
+            <Header/>
+            {/* <Main/> */}
+            <Gallery/>
+            {/* <Footer/> */}
+        </div>
+    )
+}
+
+// take the react component and show on screen
+// (,san gusto i-output)
+// close yung jsx <jsx/>
+ReactDOM.render(<App/>, document.getElementById("root"))
+
+// root.render(<App/>); // React18
